@@ -561,15 +561,15 @@
 //#define MAX31865_CALIBRATION_OHMS_1 430
 
 #define TEMP_RESIDENCY_TIME         10  // (seconds) Time to wait for hotend to "settle" in M109
-#define TEMP_WINDOW                  1  // (°C) Temperature proximity for the "temperature reached" timer
+#define TEMP_WINDOW                  2  // (°C) Temperature proximity for the "temperature reached" timer
 #define TEMP_HYSTERESIS              3  // (°C) Temperature proximity considered "close enough" to the target
 
 #define TEMP_BED_RESIDENCY_TIME     10  // (seconds) Time to wait for bed to "settle" in M190
-#define TEMP_BED_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
+#define TEMP_BED_WINDOW              2  // (°C) Temperature proximity for the "temperature reached" timer
 #define TEMP_BED_HYSTERESIS          3  // (°C) Temperature proximity considered "close enough" to the target
 
 #define TEMP_CHAMBER_RESIDENCY_TIME 10  // (seconds) Time to wait for chamber to "settle" in M191
-#define TEMP_CHAMBER_WINDOW          1  // (°C) Temperature proximity for the "temperature reached" timer
+#define TEMP_CHAMBER_WINDOW          2  // (°C) Temperature proximity for the "temperature reached" timer
 #define TEMP_CHAMBER_HYSTERESIS      3  // (°C) Temperature proximity considered "close enough" to the target
 
 /**
@@ -653,9 +653,9 @@
     #define DEFAULT_Ki_LIST {   2.5754,   2.5754 }
     #define DEFAULT_Kd_LIST {  92.7145,  92.7145 }
   #else
-    #define DEFAULT_Kp 18.7799
-    #define DEFAULT_Ki 1.3569
-    #define DEFAULT_Kd 64.9783
+    #define DEFAULT_Kp 25.1520
+    #define DEFAULT_Ki 1.9899
+    #define DEFAULT_Kd 79.4803
   #endif
 #endif
 
@@ -1155,7 +1155,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 671 } //kto z3 TODO { 80, 80, 400, 671 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 682 } //kto z3 TODO { 80, 80, 400, 682 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1228,7 +1228,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    10.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -1480,7 +1480,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, -34, -2.16 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, -34, -2.5 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
